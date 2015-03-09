@@ -28,7 +28,9 @@ class Player:
         print("You're hit! -1")
         self.power -= 1
         print('Player power = {}'.format(self.power))
+        print('\x1b[0m')
         if self.power <= 0:
+            print('\x1b[31m')
             print("You're dead. :-(")
             print('\x1b[0m')
         else:
