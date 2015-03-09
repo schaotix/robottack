@@ -14,7 +14,6 @@ def attack1():
     print('| /|||\\ |')
     print('|_______|')
     print('\x1b[0m')
-    robo1.power -= 1
 
 def attack2():
     # red
@@ -25,7 +24,6 @@ def attack2():
     print('| /|||\\ |')
     print('|_______|')
     print('\x1b[0m')
-    robo1.power -= 1
 
 def attack3():
     # red background - kaboom!
