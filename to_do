@@ -1,0 +1,5 @@
+Print robot face
+Ask Rock, Paper, Scissors
+Random generate for both player and bot
+If bot wins, player uses a point.  
+If player wins, bot loses a point and prints a new color face.
