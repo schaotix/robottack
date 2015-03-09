@@ -27,6 +27,11 @@ user = Player()  # and user
 
 def strike():
 
+    rps = ['rock', 'paper', 'scissors']  # declaring a list to hold the three choices
+    uChoice = input('Rock, Paper, Scissors? ')
+    uChoice = uChoice.lower()
+    bChoice = choice(rps)
+
     if uChoice == bChoice:
         print('You chose {}, I chose {}, therefore we tie!'.format(uChoice, bChoice))
     elif uChoice == 'rock':
@@ -53,27 +58,27 @@ def strike():
 
     if robo.power == 3:
         pics.face()
+        strike()
     elif robo.power == 2:
         pics.attack1()
+        strike()
     elif robo.power == 1:
         pics.attack2()
+        strike()
     elif robo.power <= 0:
         pics.attack3()
     else:
         print("What'd you do?!")
 
 
+def main():
+    pics.face()  # print the first face
+    print('Welcome to RoboShamBo.')
+    u = input('What is your name?: ')
+    print('Prepare to lose, {}'.format(u))
+    strike()
 
-pics.face()  # print the first face
-print('Welcome to RoboShamBo.')
-u = input('What is your name?: ')
-print('Prepare to lose, {}'.format(u))
-uChoice = input('Rock, Paper, Scissors? ')
-rps = ['rock', 'paper', 'scissors']  # declaring a list to hold the three choices
-uChoice = uChoice.lower()
-bChoice = choice(rps)
-strike()
-
+main()
 
 
 
