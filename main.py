@@ -1,28 +1,76 @@
 from random import choice
-import pics
 
 
 class Robot:
     power = 3
+
     def hit(self):
-        pics.attack1()
-        print('\x1b[31m')
-        print("GAH!")
-        print('\x1b[0m')
         self.power -= 1
+
+        if self.power == 2:
+            face1()
+            strike()
+        elif self.power == 1:
+            face2()
+            strike()
+        elif self.power <= 0:
+            face3()
+        else:
+            print('What did you do?!')
+
 
 
 class Player:
     power = 3
+
     def hit(self):
         print('\x1b[31m')
-        print("I'm hit!")
-        print('\x1b[0m')
+        print("You're hit! -1")
         self.power -= 1
+        print('Player power = {}'.format(self.power))
+        if self.power <= 0:
+            print("You're dead. :-(")
+            print('\x1b[0m')
+        else:
+            strike()
 
 
-robo = Robot()  # declaring objects for robot
+robot = Robot()  # declaring objects for robot
 user = Player()  # and user
+
+
+def face():
+    print('_________')
+    print('| (.Y.) |')
+    print('|   o   |')
+    print('| /|||\\ |')
+    print('|_______|')
+
+def face1():
+    # yellow
+    print('\x1b[33m')
+    print('_________')
+    print('| (.Y.) |')
+    print('|   o   |')
+    print('| /|||\\ |')
+    print('|_______|')
+    print('\x1b[0m')
+
+def face2():
+    # red
+    print('\x1b[31m')
+    print('_________')
+    print('| (.Y.) |')
+    print('|   o   |')
+    print('| /|||\\ |')
+    print('|_______|')
+    print('\x1b[0m')
+
+def face3():
+    # red background - kaboom!
+    print('\x1b[41m')
+    print('KABOOM!!!')
+    print('\x1b[0m')
 
 
 def strike():
@@ -34,49 +82,36 @@ def strike():
 
     if uChoice == bChoice:
         print('You chose {}, I chose {}, therefore we tie!'.format(uChoice, bChoice))
+        strike()
     elif uChoice == 'rock':
         if bChoice == 'paper':
             print('You chose {}, I chose {}.'.format(uChoice, bChoice))
             user.hit()
         else:
             print('You chose {}, I chose {}.'.format(uChoice, bChoice))
-            robo.hit()
+            robot.hit()
     elif uChoice == 'paper':
         if bChoice == 'scissors':
             print('You chose {}, I chose {}.'.format(uChoice, bChoice))
             user.hit()
         else:
             print('You chose {}, I chose {}.'.format(uChoice, bChoice))
-            robo.hit()
+            robot.hit()
     elif uChoice == 'scissors':
         if bChoice == 'rock':
             print('You chose {}, I chose {}.'.format(uChoice, bChoice))
             user.hit()
         else:
             print('You chose {}, I chose {}.'.format(uChoice, bChoice))
-            robo.hit()
-
-    if robo.power == 3:
-        pics.face()
-        strike()
-    elif robo.power == 2:
-        pics.attack1()
-        strike()
-    elif robo.power == 1:
-        pics.attack2()
-        strike()
-    elif robo.power <= 0:
-        pics.attack3()
-    else:
-        print("What'd you do?!")
-
+            robot.hit()
 
 def main():
-    pics.face()  # print the first face
+    face()  # print the first face
     print('Welcome to RoboShamBo.')
     u = input('What is your name?: ')
     print('Prepare to lose, {}'.format(u))
     strike()
+
 
 main()
 
