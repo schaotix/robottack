@@ -1,5 +1,5 @@
 from random import choice
-
+import time
 
 class Robot:
     power = 3
@@ -42,37 +42,38 @@ user = Player()  # and user
 
 
 def face():
-    print('_________')
-    print('| (.Y.) |')
-    print('|   o   |')
-    print('| /|||\\ |')
-    print('|_______|')
+    print('\t_________')
+    print('\t| (.Y.) |')
+    print('\t|   o   |')
+    print('\t| /|||\\ |')
+    print('\t|_______|')
 
 def face1():
     # yellow
     print('\x1b[33m')
-    print('_________')
-    print('| (.Y.) |')
-    print('|   o   |')
-    print('| /|||\\ |')
-    print('|_______|')
+    print('\t_________')
+    print('\t| (.Y.) |')
+    print('\t|   o   |')
+    print('\t| /|||\\ |')
+    print('\t|_______|')
     print('\x1b[0m')
 
 def face2():
     # red
     print('\x1b[31m')
-    print('_________')
-    print('| (.Y.) |')
-    print('|   o   |')
-    print('| /|||\\ |')
-    print('|_______|')
+    print('\t_________')
+    print('\t| (.Y.) |')
+    print('\t|   o   |')
+    print('\t| /|||\\ |')
+    print('\t|_______|')
     print('\x1b[0m')
 
 def face3():
     # red background - kaboom!
     print('\x1b[41m')
-    print('KABOOM!!!')
+    print('\tKABOOM!!!')
     print('\x1b[0m')
+    print('\n\tYou Win! Congratulations!')
 
 
 def strike():
@@ -110,6 +111,7 @@ def strike():
 def main():
     face()  # print the first face
     print('Welcome to RoboShamBo.')
+    time.sleep(1)
     u = input('What is your name?: ')
     print('Prepare to lose, {}'.format(u))
     strike()
