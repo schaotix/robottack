@@ -84,28 +84,42 @@ def strike():
     bChoice = choice(rps)
 
     if uChoice == bChoice:
+        time.sleep(1)
         print('You chose {}, I chose {}, therefore we tie!'.format(uChoice, bChoice))
+        time.sleep(1)
         strike()
     elif uChoice == 'rock':
         if bChoice == 'paper':
+            time.sleep(1)
             print('You chose {}, I chose {}.'.format(uChoice, bChoice))
+            time.sleep(1)
             user.hit()
         else:
+            time.sleep(1)
             print('You chose {}, I chose {}.'.format(uChoice, bChoice))
+            time.sleep(1)
             robot.hit()
     elif uChoice == 'paper':
         if bChoice == 'scissors':
+            time.sleep(1)
             print('You chose {}, I chose {}.'.format(uChoice, bChoice))
+            time.sleep(1)
             user.hit()
         else:
+            time.sleep(1)
             print('You chose {}, I chose {}.'.format(uChoice, bChoice))
+            time.sleep(1)
             robot.hit()
     elif uChoice == 'scissors':
         if bChoice == 'rock':
+            time.sleep(1)
             print('You chose {}, I chose {}.'.format(uChoice, bChoice))
+            time.sleep(1)
             user.hit()
         else:
+            time.sleep(1)
             print('You chose {}, I chose {}.'.format(uChoice, bChoice))
+            time.sleep(1)
             robot.hit()
 
 def main():
